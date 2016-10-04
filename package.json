@@ -1,0 +1,15 @@
+{
+  "name": "iframe-dynamic-content-injection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lazyload.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}

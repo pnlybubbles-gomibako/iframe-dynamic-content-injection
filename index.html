@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <iframe id="preview"></iframe>
+    <script>
+      console.log('load');
+      var dynamicHTML = `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="static.js"><` + `/script>
+  </head>
+  <body>
+    <h3>Hi, Chieri!</h3>
+  </body>
+</html>
+`;
+      var previewDocument = document.getElementById('preview').contentDocument;
+      var injectScript = previewDocument.createElement('script');
+      injectScript.innerHTML = 'console.log("inject")';
+      previewDocument.open();
+      previewDocument.write(dynamicHTML);
+      previewDocument.head.insertBefore(injectScript, previewDocument.head.firstElementChild);
+      previewDocument.close();
+    </script>
+  </body>
+</html>
